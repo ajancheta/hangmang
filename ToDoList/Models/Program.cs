@@ -21,24 +21,19 @@ namespace ToDoList.Models
           Item newUserListItem = new Item(userAddItem);
           newList.Add(newUserListItem);
         }
+
         else if (userResponse == "v")
         {
-          Console.WriteLine(newList);
+          foreach (Item element in Item.GetAll())
+          {
+            Console.WriteLine(element.GetDescription());
+          }
         }
+
         else
         {
           return;
         }
-
-        // else if (userResponse == "v")
-        // {
-        //   List<Item> result = Item.GetAll();
-        //   Console.WriteLine("Byeeeee");
-        //
-        //   //foreach loop
-        //   // Console.WriteLine(newUserListItem.GetDescription());
-        // }
-        // End class
 
       }
     }
