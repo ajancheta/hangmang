@@ -7,37 +7,40 @@ namespace ToDoList.Models
   {
     public static void Main()
     {
-      Console.WriteLine("Would you like to add a list item? [y]es, [n]o, or [v]iew list");
-      string userResponse = Console.ReadLine().ToLower();
+      List<Item> newList = new List<Item>{};
 
-      //give thks a class
-
-      if (userResponse == "y")
+      for (int i = 0; i <= 0; i--)
       {
-        Console.WriteLine("Ay ay ay. You wan a list?");
-        string userAddItem = Console.ReadLine();
-        Item newUserListItem = new Item(userAddItem);
-        Main();
-        Console.WriteLine(newUserListItem.GetDescription());
-      }
+        Console.WriteLine("Would you like to add a list item? [y]es, [v]iew list, or [e]xit?");
+        string userResponse = Console.ReadLine().ToLower();
 
-      else if (userResponse == "n")
-      {
-        Console.WriteLine("HELLO");
-        return;
-      }
+        if (userResponse == "y")
+        {
+          Console.WriteLine("Add an item!");
+          string userAddItem = Console.ReadLine();
+          Item newUserListItem = new Item(userAddItem);
+          newList.Add(newUserListItem);
+        }
+        else if (userResponse == "v")
+        {
+          Console.WriteLine(newList);
+        }
+        else
+        {
+          return;
+        }
 
-      else if (userResponse == "v")
-      {
-        //foreach loop
-        // Console.WriteLine(newUserListItem.GetDescription());
-      }
-
-      else
-      {
-      }
-
+        // else if (userResponse == "v")
+        // {
+        //   List<Item> result = Item.GetAll();
+        //   Console.WriteLine("Byeeeee");
+        //
+        //   //foreach loop
+        //   // Console.WriteLine(newUserListItem.GetDescription());
+        // }
         // End class
+
+      }
     }
   }
 }
