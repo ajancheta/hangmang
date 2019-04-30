@@ -13,7 +13,7 @@ namespace ToDoList.Tests
     public void Index_ReturnsCorrectView_True()
     {
       //Arrange
-      HomeController Controller = new HomeController();
+      HomeController controller = new HomeController();
 
       //Act
       ActionResult indexView = controller.Index();

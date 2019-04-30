@@ -81,5 +81,35 @@ namespace ToDoList.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
+    [TestMethod]
+    public void GetId_ItemsInstantiateWithAnIdAndGetterReturns_Int()
+    {
+      // Arrange
+      string description = "Suck my butt.";
+      Item newItem = new Item(description);
+
+      //Act
+      int result = newItem.GetId();
+
+      //Assert
+      Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectItem_Item()
+    {
+      //Arrange
+      string description01 = "wash ass";
+      string description02 = "party on";
+      Item newItem1 = new Item(description01);
+      Item newItem2 = new Item(description02);
+
+      //ACT
+      Item result = Item.Find(2);
+
+      //Assert
+      Assert.AreEqual(newItem2, result);
+    }
+
   }
 }
