@@ -1,0 +1,72 @@
+body {
+  color: #FFFFFF;
+  font-family: 'Gugi', cursive;
+  background-image: url("https://media.giphy.com/media/8FiLPVIONxvJu7fgV4/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px;
+  height: 100vh;
+
+}
+
+h1 {
+  font-family: font-family: 'Gugi', cursive;
+  text-align: center;
+  font-size: 5em;
+  letter-spacing: 9px;
+}
+
+a {
+  color: pink;
+  font-size: 3em;
+}
+
+.gifs {
+  text-align: center;
+}
+
+ul {
+  font-size: 20px;
+}
+
+pre {
+  font-size: 40px;
+  text-align: center;
+  color: #FFFFFF;
+  font-weight: 10px;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.winner {
+  background-color: orange;
+}
+
+.letterButton{
+  font-size: 40px;
+  float:left;
+}
+
+.guess{
+  margin-left:46%;
+  text-align: center;
+  font-size: 40px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 30px;
+}
+
+#playAgain {
+  margin-left: 80%;
+  margin-bottom: 40px;
+}
+
+.homeLink {
+  font-size: 20px;
+}

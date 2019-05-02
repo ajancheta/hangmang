@@ -12,6 +12,7 @@ namespace Hangman.Models
     private static List<Game> _instances = new List<Game> {};
     private static char[] _letters = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
     private bool _win = false;
+    private string _initial;
 
 
     public Game (string description)
@@ -19,6 +20,7 @@ namespace Hangman.Models
       _theWord = description.ToLower();
       _instances.Add(this);
       _id = _instances.Count;
+      _initial = description;
       _guesses = 0;
       _guessed = new char[_theWord.Length];
       for(int i = 0;i<_guessed.Length;i++)
@@ -28,6 +30,7 @@ namespace Hangman.Models
     }
     public int Guesses { get => _guesses; set => _guesses = value; }
     public string TheWord { get => _theWord; set => _theWord = value; }
+     public string InitialWord { get => _initial; set => _initial = value; }
 
     public int GetId()
     {

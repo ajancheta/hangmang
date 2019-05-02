@@ -1,10 +1,23 @@
-<h1>Add a word</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Hello friend!</title>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+  <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/styles.css">
+  </head>
 
-<form action="/categories" method="post">
-  <label for="categoryName">Category name</label>
-  <input id="categoryName" name="categoryName" type="text">
-  <button type="submit">Add</button>
-</form>
+  <body>
+    <h1>ADD A WORD</h1>
 
-<p><a href="/">Back home</a></p>
-<p><a href="/categories">Back to categories.</a></p>
+    <form action="/categories" method="post">
+      <label for="categoryName">A word for your friend to guess:</label>
+      <input id="categoryName" name="categoryName" type="text">
+      <button type="submit">Add Word</button>
+    </form>
+
+    <p><a href="/">Back home</a></p>
+    <p><a href="/categories">Back to list of words</a></p>
+  </body>
+</html>

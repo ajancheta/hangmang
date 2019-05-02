@@ -14,7 +14,6 @@ namespace Hangman.Controllers
        Game playing = Game.Find(1);
 
        char[] theWord = playing.TheWord.ToCharArray();
-       Console.WriteLine(new string(theWord));
        if(Array.IndexOf(theWord, letter) < 0)
        {
          playing.Guesses = playing.Guesses+1;
@@ -23,7 +22,6 @@ namespace Hangman.Controllers
        {
          playing.SetGuessed(Array.IndexOf(theWord, letter), letter);
          theWord[Array.IndexOf(theWord,letter)] = '_';
-        Console.WriteLine(new string(theWord));
        }
        Game.RemoveLetter(letter);
        playing.TheWord = new string(theWord);
@@ -37,11 +35,17 @@ namespace Hangman.Controllers
     [HttpGet("/game/play")]
     public ActionResult Play()
     {
-      List<Game> allCategories = Game.GetAll();
-      Game toPlay = Game.Find(1);
-      Console.WriteLine(toPlay.TheWord);
 
-      return View(toPlay);
+      if(Game.GetAll().Count > 0)
+      {
+        List<Game> allCategories = Game.GetAll();
+        Game toPlay = Game.Find(1);
+        return View(toPlay);
+      }else
+      {
+        return RedirectToAction("Index", "Home");
+      }
+
     }
 
     //
@@ -54,7 +58,13 @@ namespace Hangman.Controllers
       {
         game.ReduceId();
       }
-      return RedirectToAction("Play");
+      if(Game.GetAll().Count > 0)
+      {
+        return RedirectToAction("Play");
+      }else
+      {
+        return RedirectToAction("Index", "Home");
+      }
     }
 
   }
