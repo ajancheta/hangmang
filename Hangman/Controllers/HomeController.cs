@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using Hangman.Models;
 using System.Collections.Generic;
 
-namespace ToDoList.Controllers
+namespace Hangman.Controllers
 {
   public class HomeController : Controller
   {

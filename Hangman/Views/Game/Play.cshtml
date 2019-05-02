@@ -1,0 +1,47 @@
+@using Hangman.Models;
+
+<h1>Hangman</h1>
+
+
+@if (Model.Guesses > 0)
+{<pre>_________</pre>}
+@if (Model.Guesses > 1)
+{<pre>  O     |</pre>}
+@if (Model.Guesses > 2)
+{<pre> /|\    |</pre>}
+@if (Model.Guesses > 3)
+{<pre>  |     |</pre>}
+@if (Model.Guesses > 4)
+{<pre> / \    |</pre>}
+@if (Model.Guesses > 5)
+{
+<img src="https://media.giphy.com/media/cvPWgMNRaNnsA/giphy.gif">
+<form action='/game/play/again' method='post'>
+  <button type='submit'>Play Again</button>
+</form>
+  }
+else if (Model.GetWinner() == true)
+{
+  <img src="https://media.giphy.com/media/cEjIYZNeO7VxS/giphy.gif">
+  <form action='/game/play/again' method='post'>
+    <button type='submit'>Play Again</button>
+  </form>
+}
+  else
+  {
+@foreach(var letter in Model.GetGuessed())
+{
+  <p style="display:inline">@letter</p>
+}
+
+@foreach(var letter in @Game.GetLetters())
+{
+  if(@letter != '_')
+  {
+    <form action='/game/play/@letter' method='post'>
+      <button type='submit'>@letter</button>
+    </form>
+  }
+
+}
+}
